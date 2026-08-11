@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0757c9">
+<title>SK Free-Wifi Nagsimbaanan</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;font-family:Inter,Arial,sans-serif;color:#172033;background:radial-gradient(circle at top,#dfeeff 0,#f7fbff 45%,#eef7ff 100%)}
+.card{width:min(440px,100%);background:rgba(255,255,255,.96);border:1px solid rgba(7,87,201,.12);border-radius:30px;padding:28px 24px 22px;text-align:center;box-shadow:0 24px 70px rgba(18,63,115,.16)}
+.logo-wrap{width:125px;height:125px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;position:relative}
+.logo-wrap::before{content:"";position:absolute;inset:3px;border-radius:50%;border:2px solid rgba(11,92,255,.18);animation:ring 2.4s infinite}
+.logo-wrap::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid transparent;border-top-color:rgba(11,92,255,.55);animation:spin 2.8s linear infinite}
+.logo{width:105px;height:105px;object-fit:contain;position:relative;z-index:2;animation:logoFloat 2.8s ease-in-out infinite, logoGlow 2.8s ease-in-out infinite}
+@keyframes logoFloat{0%,100%{transform:translateY(0) scale(1) rotate(0)}50%{transform:translateY(-5px) scale(1.035) rotate(-1deg)}}
+@keyframes logoGlow{0%,100%{filter:drop-shadow(0 5px 7px rgba(11,92,255,.08))}50%{filter:drop-shadow(0 8px 16px rgba(11,92,255,.28))}}
+@keyframes ring{0%,100%{transform:scale(.92);opacity:.3}50%{transform:scale(1.08);opacity:.75}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.wifi{position:relative;width:92px;height:72px;margin:2px auto 10px}
+.arc{position:absolute;left:50%;transform:translateX(-50%) rotate(-45deg);border:7px solid transparent;border-top-color:#0b5cff;border-right-color:#0b5cff;border-radius:50%;opacity:.25;animation:pulse 1.8s infinite ease-in-out}
+.a1{width:78px;height:78px;top:-8px}.a2{width:56px;height:56px;top:3px;animation-delay:.25s}.a3{width:34px;height:34px;top:14px;animation-delay:.5s}
+.dot{position:absolute;width:13px;height:13px;border-radius:50%;background:#0b5cff;left:50%;bottom:8px;transform:translateX(-50%);animation:dotpulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:.18}50%{opacity:1}}@keyframes dotpulse{50%{box-shadow:0 0 0 9px rgba(11,92,255,.08)}}
+.badge{display:inline-flex;gap:8px;align-items:center;background:#eaf8ef;color:#16743b;padding:8px 13px;border-radius:999px;font-size:12px;font-weight:800}
+.green{width:8px;height:8px;background:#20b968;border-radius:50%;box-shadow:0 0 0 4px #d9f4e2}
+h1{font-size:27px;line-height:1.15;margin:16px 0 9px}.sub{color:#687386;font-size:14px;line-height:1.55;margin:0}
+.datetime{margin:18px 0 15px;padding:13px;border-radius:17px;background:#eef5ff;border:1px solid #dceaff}.date{font-size:13px;color:#63718a;font-weight:700}.time{font-size:25px;font-weight:900;color:#0b5cff;margin-top:3px}.tz{font-size:10px;color:#8793a5;margin-top:3px}
+.info{margin:0 0 15px;background:#f5f8fc;border-radius:18px;padding:5px 15px;text-align:left}.row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #e6edf5}.row:last-child{border-bottom:0}.ico{font-size:19px;width:26px}.small{font-size:11px;color:#7b8594}.val{font-size:14px;font-weight:800;margin-top:2px}
+.notice{background:#fff8e4;border:1px solid #f6e5ad;color:#735700;border-radius:15px;padding:13px;font-size:12.5px;line-height:1.5}
+.btn{display:block;margin-top:16px;padding:14px;border-radius:13px;background:#0b5cff;color:#fff;text-decoration:none;font-weight:800;font-size:14px;box-shadow:0 9px 22px rgba(11,92,255,.22)}
+.footer{font-size:10.5px;color:#8a94a3;line-height:1.5;margin-top:19px}
+@media(max-width:380px){.card{padding:22px 18px}.logo{width:90px;height:90px}.logo-wrap{width:110px;height:110px}h1{font-size:24px}}
+</style>
+</head>
+<body>
+<main class="card">
+<div class="logo-wrap"><img src="logo.png" class="logo" alt="SK Nagsimbaanan Logo"></div>
+
+<div class="wifi" aria-label="Wi-Fi connected"><span class="arc a1"></span><span class="arc a2"></span><span class="arc a3"></span><span class="dot"></span></div>
+
+<div class="badge"><span class="green"></span> CONNECTION SUCCESSFUL</div>
+<h1>Welcome to<br>SK Free-Wifi Nagsimbaanan</h1>
+<p class="sub">You are now connected to the free Wi-Fi service of the Sangguniang Kabataan of Barangay Nagsimbaanan.</p>
+
+<div class="datetime"><div class="date" id="date">Loading date...</div><div class="time" id="time">--:--:--</div><div class="tz">PHILIPPINE STANDARD TIME • ASIA/MANILA</div></div>
+
+<section class="info">
+<div class="row"><span class="ico">📶</span><div><div class="small">NETWORK</div><div class="val">SK Free-Wifi Nagsimbaanan</div></div></div>
+<div class="row"><span class="ico">⚡</span><div><div class="small">STATUS</div><div class="val">Internet Access Activated</div></div></div>
+<div class="row"><span class="ico">⏱️</span><div><div class="small">ACCESS</div><div class="val">Up to 8 hours per connection per day</div></div></div>
+</section>
+
+<div class="notice"><b>💡 Use the internet responsibly.</b><br>Enjoy access for education, research, communication, government services, and other productive activities.</div>
+<a class="btn" href="https://www.facebook.com/SKNagsimbaanan" target="_blank" rel="noopener">Visit Official SK Facebook Page</a>
+<div class="footer"><b>SK Free-Wifi Nagsimbaanan</b><br>Official Digital Inclusion Initiative of the Sangguniang Kabataan of Barangay Nagsimbaanan</div>
+</main>
+
+<script>
+function updateClock(){
+ const now=new Date();
+ document.getElementById('date').textContent=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',year:'numeric',month:'long',day:'numeric',weekday:'long'}).format(now);
+ document.getElementById('time').textContent=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',second:'2-digit',hour12:true}).format(now);
+}
+updateClock();setInterval(updateClock,1000);
+</script>
+</body>
+</html>
