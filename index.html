@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0757c9"><title>SK Free-Wifi Nagsimbaanan</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;font-family:Arial,sans-serif;color:#172033;background:radial-gradient(circle at top,#dfeeff,#f7fbff 55%,#eef7ff)}
+.card{width:min(440px,100%);background:#fff;border:1px solid #dce8f8;border-radius:30px;padding:28px 24px 22px;text-align:center;box-shadow:0 24px 70px #123f7329}
+.logo-wrap{width:125px;height:125px;margin:auto;position:relative;display:flex;align-items:center;justify-content:center}
+.logo-wrap:before{content:"";position:absolute;inset:3px;border-radius:50%;border:2px solid #0b5cff33;animation:ring 2.4s infinite}.logo-wrap:after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid transparent;border-top-color:#0b5cff99;animation:spin 2.8s linear infinite}
+.logo{width:105px;height:105px;object-fit:contain;z-index:2;animation:float 2.8s ease-in-out infinite,glow 2.8s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-5px) scale(1.035)}}@keyframes glow{50%{filter:drop-shadow(0 8px 16px #0b5cff47)}}@keyframes ring{50%{transform:scale(1.08);opacity:.75}}@keyframes spin{to{transform:rotate(360deg)}}
+.wifi{position:relative;width:92px;height:72px;margin:5px auto}.arc{position:absolute;left:50%;transform:translateX(-50%) rotate(-45deg);border:7px solid transparent;border-top-color:#0b5cff;border-right-color:#0b5cff;border-radius:50%;opacity:.25;animation:pulse 1.8s infinite}.a1{width:78px;height:78px;top:-8px}.a2{width:56px;height:56px;top:3px;animation-delay:.25s}.a3{width:34px;height:34px;top:14px;animation-delay:.5s}.dot{position:absolute;width:13px;height:13px;border-radius:50%;background:#0b5cff;left:50%;bottom:8px;transform:translateX(-50%);animation:dp 1.8s infinite}@keyframes pulse{50%{opacity:1}}@keyframes dp{50%{box-shadow:0 0 0 9px #0b5cff14}}
+.badge{display:inline-flex;gap:8px;align-items:center;background:#eaf8ef;color:#16743b;padding:8px 13px;border-radius:999px;font-size:12px;font-weight:bold}.green{width:8px;height:8px;background:#20b968;border-radius:50%}
+h1{font-size:27px;line-height:1.15;margin:16px 0 9px}.sub{color:#687386;font-size:14px;line-height:1.55}
+.datetime{margin:18px 0 15px;padding:13px;border-radius:17px;background:#eef5ff;border:1px solid #dceaff}.date{font-size:13px;color:#63718a;font-weight:bold}.time{font-size:25px;font-weight:900;color:#0b5cff;margin-top:3px}.tz{font-size:10px;color:#8793a5;margin-top:3px}
+.info{margin-bottom:15px;background:#f5f8fc;border-radius:18px;padding:5px 15px;text-align:left}.row{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #e6edf5}.row:last-child{border:0}.ico{width:26px}.small{font-size:11px;color:#7b8594}.val{font-size:14px;font-weight:bold;margin-top:2px}
+.notice,.voice{border-radius:15px;padding:13px;font-size:12.5px;line-height:1.5}.notice{background:#fff8e4;border:1px solid #f6e5ad;color:#735700}.voice{margin-top:14px;background:#edf4ff;color:#0b4eae;font-weight:bold}
+.btn{display:block;margin-top:16px;padding:14px;border-radius:13px;background:#0b5cff;color:white;text-decoration:none;font-weight:bold;box-shadow:0 9px 22px #0b5cff38}.footer{font-size:10.5px;color:#8a94a3;line-height:1.5;margin-top:19px}
+</style></head><body><main class="card">
+<div class="logo-wrap"><img src="logo.png" class="logo" alt="SK Nagsimbaanan Logo"></div>
+<div class="wifi"><span class="arc a1"></span><span class="arc a2"></span><span class="arc a3"></span><span class="dot"></span></div>
+<div class="badge"><span class="green"></span> CONNECTION SUCCESSFUL</div>
+<h1>Welcome to<br>SK Free-Wifi Nagsimbaanan</h1>
+<p class="sub">You are now connected to the free Wi-Fi service of the Sangguniang Kabataan of Barangay Nagsimbaanan.</p>
+<div class="datetime"><div class="date" id="date"></div><div class="time" id="time"></div><div class="tz">PHILIPPINE STANDARD TIME • ASIA/MANILA</div></div>
+<section class="info">
+<div class="row"><span class="ico">📶</span><div><div class="small">NETWORK</div><div class="val">SK Free-Wifi Nagsimbaanan</div></div></div>
+<div class="row"><span class="ico">⚡</span><div><div class="small">STATUS</div><div class="val">Internet Access Activated</div></div></div>
+<div class="row"><span class="ico">⏱️</span><div><div class="small">ACCESS</div><div class="val">Up to 8 hours per connection per day</div></div></div></section>
+<div class="notice"><b>💡 Use the internet responsibly.</b><br>Enjoy access for education, research, communication, government services, and other productive activities.</div>
+<div class="voice" id="voiceStatus">🔊 Connection announcement ready</div>
+<a class="btn" href="https://www.facebook.com/SKNagsimbaanan" target="_blank">Visit Official SK Facebook Page</a>
+<div class="footer"><b>SK Free-Wifi Nagsimbaanan</b><br>Official Digital Inclusion Initiative of the Sangguniang Kabataan of Barangay Nagsimbaanan</div>
+</main>
+<script>
+function clock(){let n=new Date();document.getElementById("date").textContent=new Intl.DateTimeFormat("en-PH",{timeZone:"Asia/Manila",weekday:"long",year:"numeric",month:"long",day:"numeric"}).format(n);document.getElementById("time").textContent=new Intl.DateTimeFormat("en-PH",{timeZone:"Asia/Manila",hour:"numeric",minute:"2-digit",second:"2-digit",hour12:true}).format(n)}clock();setInterval(clock,1000);
+function announce(){try{let A=window.AudioContext||window.webkitAudioContext;if(A){let c=new A(),g=c.createGain();g.gain.value=1;g.connect(c.destination);[0,0.16,0.32].forEach((d,i)=>{let o=c.createOscillator();o.type="sine";o.frequency.value=[880,1175,1568][i];o.connect(g);o.start(c.currentTime+d);o.stop(c.currentTime+d+.14)})}}catch(e){}if("speechSynthesis"in window){speechSynthesis.cancel();let u=new SpeechSynthesisUtterance("You are now successfully connected to free internet connection.");u.lang="fil-PH";u.rate=.86;u.pitch=1;u.volume=1;speechSynthesis.speak(u);
+document.getElementById("voiceStatus").textContent="🔊 You are now successfully connected to free internet connection";
+u.onend=function(){
+  const song=document.getElementById("sarangolaAudio");
+  song.currentTime=0;
+  song.volume=1.0;
+  song.play().catch(()=>{});
+}
+}}
+window.addEventListener("load",()=>setTimeout(announce,500));document.addEventListener("click",()=>announce(),{once:true});
+</script>
+<audio id="sarangolaAudio" preload="auto">
+  <source src="Saranggola.mp3" type="audio/mpeg">
+</audio>
+</body></html>
