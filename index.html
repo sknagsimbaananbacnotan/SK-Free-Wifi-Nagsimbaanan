@@ -110,18 +110,15 @@
   .sub{color:#687386;font-size:14px;line-height:1.55;margin:0}
 
   .datetime{
-    margin:18px 0 15px;padding:13px;border-radius:17px;
+    margin:18px 0 12px;padding:13px;border-radius:17px;
     background:#eef5ff;border:1px solid #dceaff;
   }
   .date{font-size:13px;color:#63718a;font-weight:bold}
   .time{font-size:25px;font-weight:900;color:#0b5cff;margin-top:3px;font-variant-numeric:tabular-nums}
   .tz{font-size:10px;color:#8793a5;margin-top:3px;letter-spacing:.03em}
 
-  .connect-btn-wrapper{
-    margin-top:15px;margin-bottom:15px;
-  }
   .connect-btn{
-    display:block;width:100%;padding:14px;border-radius:13px;
+    display:block;width:100%;padding:12px 14px;margin-top:12px;margin-bottom:12px;border-radius:13px;
     background:#0b5cff;color:#fff;text-decoration:none;font-weight:bold;
     border:none;cursor:pointer;font-size:14px;
     box-shadow:0 9px 22px #0b5cff38;transition:transform .15s ease,background .15s ease;
@@ -193,6 +190,14 @@
   }
   .pldt-logo{height:30px;width:auto;object-fit:contain}
 
+  @media (max-width:480px){
+    .card{
+      padding:20px 16px 16px;
+    }
+    h1{font-size:24px;margin:12px 0 6px}
+    .datetime{margin:14px 0 10px}
+  }
+
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:.001s !important;animation-iteration-count:1 !important}
   }
@@ -203,14 +208,14 @@
 
   <div class="brand-row">
   <div class="logo-wrap">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABDgAAAQ4CAYAAADsEGyPAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAAJcEhZcwAADsQAAA7EAZUrDhsAAASQaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQg[...]
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABDgAAAQ4CAYAAADsEGyPAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAAJcEhZcwAADsQAAA7EAZUrDhsAAASQaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWN[...]
          onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'logo-fallback',textContent:'SK'}))">
   </div>
 
   <div class="brand-divider"></div>
   <div class="powered-top">
     <span class="powered-label">Powered by</span>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAE2EAAAg6CAYAAACktNs6AAAI1GlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1w[...]
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAE2EAAAg6CAYAAACktNs6AAAI1GlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg[...]
   </div>
   </div>
 
@@ -237,9 +242,7 @@
     <div class="tz">PHILIPPINE STANDARD TIME • ASIA/MANILA</div>
   </div>
 
-  <div class="connect-btn-wrapper">
-    <button class="connect-btn" id="connectBtn">CONNECT</button>
-  </div>
+  <button class="connect-btn" id="connectBtn">CONNECT</button>
 
   <section class="info" aria-label="Connection details">
     <div class="row">
